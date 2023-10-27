@@ -14,6 +14,8 @@ body {
     align-items: center;
 }
 
+/* ====================External Card=================== */
+
 .card {
     position: relative;
     width: 500px;
@@ -29,17 +31,25 @@ body {
 }
 
 .card svg {
-   animation: bounce 1s infinite alternate;
+    animation: bounce 1s infinite alternate;
     fill: #333;
 
 }
+
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
         transform: translateY(0);
     }
+
     40% {
         transform: translateY(-20px);
     }
+
     60% {
         transform: translateY(-10px);
     }
@@ -50,6 +60,8 @@ body {
     transform: rotate(-5deg) scale(1.1);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+
+/* ===========================Inner Card ===================== */
 
 .card__content {
     position: absolute;
@@ -71,30 +83,282 @@ body {
 }
 
 .card__title {
+    animation: bounce2 1s infinite, neon 1s infinite;
+    display: flex;
+    justify-content: center;
     margin: 0;
-    font-size: 24px;
+    font-size: 32px;
     color: #333;
     font-weight: 700;
 }
 
+@keyframes bounce2 {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-15px);
+    }
+
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes neon {
+    0% {
+        text-shadow: 0 0 5px #ccc, 0 0 10px #ccc;
+    }
+
+    50% {
+        text-shadow: 0 0 10px #ff0f7b, 0 0 15px #ff0f7b;
+        scale: 1;
+    }
+
+    100% {
+        text-shadow: 0 0 15px #f89b29, 0 0 10px #f89b29;
+    }
+}
+
+
+
+#question {
+    font-size: 20px;
+    color: #555;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
 .card__description {
+    /* line-height: px; */
     margin: 10px 0 0;
-    font-size: 14px;
+    font-size: 18px;
     color: #777;
-    line-height: 1.4;
+    line-height: 1.3;
 }
 
 .card:hover svg {
     scale: 0;
     transform: rotate(-45deg);
 }
-input{
-    padding: 10px;
+
+
+
+/* ===============================Input=========================== */
+#check-desc {
+    animation: bounce3 2s infinite, neo 1s infinite;
+    position: absolute;
+    left: 140px;
+    bottom: 185px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+@keyframes bounce3 {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(15px);
+    }
+
+    60% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes neon1 {
+    0% {
+        text-shadow: 0 0 5px #ccc, 0 0 10px #ccc;
+    }
+
+    50% {
+        text-shadow: 0 0 10px #777, 0 0 15px #777;
+        scale: 1;
+    }
+
+    100% {
+        text-shadow: 0 0 15px #fff, 0 0 10px #fff;
+    }
+}
+
+
+
+.form-control {
+    position: relative;
+    margin-top: 75px;
+    margin-inline: 15px;
+    width: 80%;
+}
+
+.form-control input {
+
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid #333;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    display: block;
+    width: 100%;
     border-radius: 50px;
-    /* border: 1px solid #333; */
-    margin: 10px;
+    padding: 15px;
+    font-size: 18px;
+    color: #333;
+}
+
+.form-control input:focus,
+.form-control input:valid {
+    outline: 0;
+    border-bottom-color: #333;
+}
+
+.form-control label {
+    position: absolute;
+    top: 5px;
+    left: 12px;
+    pointer-events: none;
+}
+
+.form-control label span {
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    visibility: hidden;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus+label span,
+.form-control input:valid+label span {
+    visibility: visible;
+    color: #333;
+    transform: translateY(-30px);
+}
+
+
+
+/* ============================Btn=============================== */
+
+button {
+    /* position: relative; */
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: #444;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+button:hover {
+    background: linear-gradient(-45deg, #ff0f7b 0%, #f89b29 100%);
+    box-shadow: 0 0 30px 5px #f89b29;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+button:hover::before {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+}
+
+button::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+    from {
+        opacity: 0;
+        left: 0%;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        left: 100%;
+    }
+}
+
+button:active {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+}
+
+#modal {
+    width: 500px;
+    height: 500px;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#modal.show {
+    display: block;
+}
+
+#result {
+    margin: 20px;
+    /* margin-top: 150px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 90%;
-    border: 2px solid #333; /* Set the border width and make it transparent */
-    border-image: linear-gradient(to right, #ff0000, #00ff00); /* Define your linear gradient */
-    border-image-slice: 1; /* Slice the border image to cover the entire border */
+    height: 150px;
+    border-radius: 30px;
+    background: linear-gradient(-45deg, #ff0f7b 0%, #f89b29 100%);
+    font-size: 24px;
+
+}
+
+#modal-btn {
+    margin: 10px;
+    color: #333;
+    background-color: #ccc;
 }

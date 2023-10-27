@@ -2,11 +2,6 @@
 <html lang="en">
 
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Great+Vibes&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,15 +19,47 @@
         </svg>
 
         <div class="card__content">
-            <p class="card__title">Palindrome Checker Game
+            <h1 class="card__title">Palindrome Checker Game
+            </h1>
+            <p id="question"> Q: What is Palindrome ?</p>
+            <p class="card__description"> Ans : Palindromes are word games that read the same forwards and backwards.
+                They
+                offer a delightful linguistic challenge and a touch of clever fun in everyday language. Whether it's
+                "racecar," "level," or "never odd or even," palindromes are a source of amusement for those who
+                appreciate the beauty of symmetry in words.
             </p>
-            <p class="card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.
-            </p>
-            <input id="input" type="text" placeholder="Enter ">
+            <h2 id="check-desc">Enter words to know :)</h2>
+
+            <div class="form-control">
+                <input type="value" required="" placeholder="Check Palindrome" id="inputText">
+                <label>
+                    <span style="transition-delay:0ms">P</span>
+                    <span style="transition-delay:50ms">a</span>
+                    <span style="transition-delay:100ms">l</span>
+                    <span style="transition-delay:150ms">i</span>
+                    <span style="transition-delay:200ms">n</span>
+                    <span style="transition-delay:250ms">d</span>
+                    <span style="transition-delay:300ms">r</span>
+                    <span style="transition-delay:350ms">o</span>
+                    <span style="transition-delay:350ms">m</span>
+                    <span style="transition-delay:350ms">e</span>
+                    <span style="transition-delay:350ms">.</span>
+                </label>
+            </div>
+            <button id="chk-btn" onclick="checkPalindrome()">
+                Check
+            </button>
+
+            <div id="modal">
+                <p id="result"></p>
+                <svg id="resultSvg" width="100" height="100"></svg>
+                <button id="modal-btn" onclick="closeModal()">Close</button>
+            </div>
+
         </div>
     </div>
 
+    <script src="index.js"></script>
 </body>
 
 </html>
