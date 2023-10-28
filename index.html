@@ -10,6 +10,8 @@
 </head>
 
 <body>
+
+    <!-- ===================OuterCard============================== -->
     <div class="card">
         <span style="color: #333; font-size: 34px; padding: 40px;">Come Here ...</span>
         <svg xmlns="http://www.w3.org/2000/svg" height="4em"
@@ -18,6 +20,8 @@
                 d="M0 192H176V0H160C71.6 0 0 71.6 0 160v32zm0 32V352c0 88.4 71.6 160 160 160h64c88.4 0 160-71.6 160-160V224H192 0zm384-32V160C384 71.6 312.4 0 224 0H208V192H384z" />
         </svg>
 
+
+        <!-- ================================Inner Card=========================== -->
         <div class="card__content">
             <h1 class="card__title">Palindrome Checker Game
             </h1>
@@ -49,9 +53,11 @@
             <button id="chk-btn" onclick="checkPalindrome()">
                 Check
             </button>
-
+<!-- ============================Modal======================= -->
             <div id="modal">
-                <p id="result"></p>
+                <span id="result">
+                <svg id="resultSvg" width="100" height="100"></svg>
+                </span>
                 <svg id="resultSvg" width="100" height="100"></svg>
                 <button id="modal-btn" onclick="closeModal()">Close</button>
             </div>

@@ -12,6 +12,7 @@ function checkPalindrome() {
 
     if (isPalindrome) {
         resultElement.innerHTML = "Hurrah ! It's a palindrome!";
+        // resultSvg.element = 
     } else {
         resultElement.innerHTML = " Oops ! It's not a palindrome";
 
