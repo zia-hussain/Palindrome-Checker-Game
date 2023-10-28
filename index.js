@@ -5,27 +5,23 @@ function checkPalindrome() {
         alert("Please enter a word or phrase before checking.");
         return;
     }
-
-
-
-
     const inputText = document.getElementById('inputText').value;
     const isPalindrome = isPalindromeCheck(inputText);
     const resultElement = document.getElementById('result');
     const resultSvg = document.getElementById('resultSvg');
 
     if (isPalindrome) {
-        resultElement.innerHTML = "It's a palindrome!";
+        resultElement.innerHTML = "Hurrah ! It's a palindrome!";
     } else {
-        resultElement.innerHTML = "It's not a palindrome";
-        
+        resultElement.innerHTML = " Oops ! It's not a palindrome";
+
     }
 
     document.getElementById('modal').classList.add('show');
 }
 function closeModal() {
     document.getElementById('modal').classList.remove('show');
-    document.getElementById('inputText').value = ''; 
+    document.getElementById('inputText').value = '';
 }
 
 function isPalindromeCheck(str) {
