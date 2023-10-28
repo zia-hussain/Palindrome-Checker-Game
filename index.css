@@ -117,7 +117,7 @@ body {
         text-shadow: 0 0 5px #ccc, 0 0 10px #ccc;
     }
 
-    50% {
+    40% {
         text-shadow: 0 0 10px #ff0f7b, 0 0 15px #ff0f7b;
         scale: 1;
     }
