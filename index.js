@@ -11,7 +11,7 @@ function checkPalindrome() {
     const resultSvg = document.getElementById('resultSvg');
 
     if (isPalindrome) {
-        resultElement.innerHTML = `Hurrah ! ${inputText}  a palindrome!`;
+        resultElement.innerHTML = `Hurrah ! ${inputText} is a palindrome!`;
         // resultSvg.element = 
     } else {
         resultElement.innerHTML =  `Ooops ! ${inputText} is not a palindrome!`;
